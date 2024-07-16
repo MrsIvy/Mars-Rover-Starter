@@ -1,5 +1,4 @@
-class Message {
-   // Write code here!
-}
-
-module.exports = Message;
+// class Message {
+   
+// const Command = require('../command.js');
+// const Message = require('../message.js');
