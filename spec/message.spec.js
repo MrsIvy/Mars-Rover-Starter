@@ -12,15 +12,15 @@ describe("Message class", function () {
     });
     it("will set a name as the first constructor", function () {
   
-      let constructor = new Message("LaTanya");
-      expect(constructor.name).toBe("LaTanya");
+      let message = new Message("LaTanya");
+      expect(message.name).toBe("LaTanya");
   
     });
   
-    it ("will set a constructor sets a value passed in as the 2nd argument", function () {
+    it ("contains a commands array passed into the constructor as the 2nd argument", function () {
       
-        let constructor = new Message("LaTanya", ["MODE_CHANGE", "LOW POWER", "STATUS CHECK"]);
-      expect(constructor.commands).toStrictEqual(["MODE_CHANGE", "LOW POWER", "STATUS CHECK"]);
+        let message = new Message("LaTanya", ["MODE_CHANGE", "LOW POWER", "STATUS CHECK"]);
+      expect(message.commands).toStrictEqual(["MODE_CHANGE", "LOW POWER", "STATUS CHECK"]);
     })
   });
   

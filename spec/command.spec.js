@@ -11,14 +11,13 @@ describe("Command class", function () {
   });
   it("will set a constructor as command type", function () {
 
-    let constructor = new Command("Hi There");
-    expect(constructor.commandType).toBe("Hi There");
+    let command = new Command("Hi There");
+    expect(command.commandType).toBe("Hi There");
+});
 
-  });
-
-  it ("will set a constructor sets a value passed in as the 2nd argument", function () {
-    let constructor = new Command("Hi There", 5860);
-    expect(constructor.value).toBe(5860);
+  it("will set a constructor sets a value passed in as the 2nd argument", function () {
+    let command = new Command("Hi There", 5860);
+    expect(command.value).toBe(5860);
   })
 });
 
