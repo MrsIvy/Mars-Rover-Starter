@@ -7,16 +7,21 @@ class Rover {
       this.mode = "Normal";
       this.generatorWatts = 110;
    };
+   receiveMessage(message) {
+      let response = message.name;
+      let results = message.commands;
+   
+      return {message: message.name, results: results}
+
+
+   }
+
 };
 // Write code here!
 // let response return an object containing 2 properties
-// message is the key
-// value is message.name
-// reuslts is a key 
-// [] is value 
-receiveMessage(message) {
-   let response;
-};
+// message is the key value is message.name
+// results is a key empty array [] is value 
+;
 
 
 

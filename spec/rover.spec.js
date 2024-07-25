@@ -19,19 +19,23 @@ describe("Rover class", function () {
   });
 
   it("will give a response returned by receiveMessage contains the name of the message", function () {
+
     let commands = [new Command("MOVE", 99482), new Command("STATUS_CHECK")];
     let message = new Message("LaTanya", commands);
-    let rover = new Rover(5840);
-    let response = rover.receiveMessage(message).message
-    expect(response).toBe(message.name);
-
+    let rover = new Rover(5860);
+    let response = rover.receiveMessage(message);
+    expect(response.message).toBe("LaTanya");
+    console.log(response);
   })
 
+  it("will give a response returned by receiveMessage includes two results if two commands are sent in the message", function () {
 
+    let commands = [new Command("MOVE", 99482), new Command("STATUS_CHECK")];
+    let message = new Message("LaTanya", commands);
+    let rover = new Rover(5860);
+    let response = rover.receiveMessage(message);
+    expect(response.results.length).toBe(commands.length);
+    console.log(response);
+  })
 });
 
-// it("will set constructor sets position and default for mode and generatorWatts", functon () {
-// expect(rover.position).toBe(98382);
-// expect(rover.mode).toBe("Normal");
-// expect(rover.generatorWatts).toBe(110);
-// let  rover = new Rover(98382);
