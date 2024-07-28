@@ -37,5 +37,16 @@ describe("Rover class", function () {
     expect(response.results.length).toBe(commands.length);
     console.log(response);
   })
+
+  it("responds correctly to the status check command", function () {
+
+    let commands = [new Command("MOVE", 99482), new Command("STATUS_CHECK")];
+    let message = new Message("LaTanya", commands);
+    let rover = new Rover(5860);
+    let response = rover.receiveMessage(message);
+    expect(response.commands).toBe();
+    console.log(response);
+  })
+  // ^^^^ All code above this line ^^^^
 });
 
