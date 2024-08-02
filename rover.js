@@ -18,7 +18,7 @@ class Rover {
             results.push({
                completed: true,
                roverStatus: {
-                  mode: "NORMAL",
+                  mode: this.mode,
                   generatorWatts: 110,
                   position: 5860
                } 
