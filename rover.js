@@ -8,11 +8,12 @@ class Rover {
       this.generatorWatts = 110;
    };
    receiveMessage(message) {
-      let response = message.name;
+      let roverMessage = message.name;
       let results = [];
       // let roverStatus = response.results[1].roverStatus;
       // iterate over the commands array for loop message.commands.length
-      // check the commandtype conditional if/else if/else if/ else(push {completed: true}
+      // check the commandtype conditional if/else if/else if/ else(push {completed: true}      
+      
       for (let i = 0; i < message.commands.length; i++) {
          if (message.commands[i].commandType === 'STATUS_CHECK') {
             results.push({

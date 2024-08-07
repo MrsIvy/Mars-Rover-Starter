@@ -72,33 +72,29 @@ describe("Rover class", function () {
 
   it("responds with a false completed value when attempting to move in LOW_POWER mode", function () {
 
-    let commands = [new Command("MOVE", 99482), new Command("STATUS_CHECK")];
+    let commands = [new Command("MODE_CHANGE", "LOW_POWER"), new Command("MOVE", 2345)];
     let message = new Message("LaTanya", commands);
     let rover = new Rover(5860);
-    let test = rover.receiveMessage(message);
-    let firstPosition = rover.position;
+    let roverMessage = rover.receiveMessage(message);
 
-    expect(test.results[0].completed).toBe(false);
-    expect(rover.position).toBe(firstPosition);
+    expect(rover.mode).toBe("LOW_POWER")
+    expect(roverMessage.results[0].completed).toBe(true);
+    expect(rover.position).toBe(5860);
+    expect(roverMessage.results[1].completed).toBe(false);
   })
-console.log(test.results[0])
-  // If feel like I should use commandtype and then mode right 
-  // here to change mode from NORMAL to LOW_POWER 
 
-
-})
+});
 
 it("responds with the position for the move command", function () {
 
-  let commands = [new Command("MOVE", 99482), new Command("STATUS_CHECK")];
+  let commands = [new Command("STATUS_CHECK"), new Command("MOVE", 99482)];
   let message = new Message("LaTanya", commands);
   let rover = new Rover(5860);
-  let response = rover.receiveMessage(message);
+  
+  rover.receiveMessage(message);
 
-  expect(response.commands.completed).toBe(true);
-  expect(rover.position).toBe(99482);
+  expect(rover.position).toEqual(99482);
 
-  console.log(response);
 });
 
 // If feel like I should use commandtype and then mode right
