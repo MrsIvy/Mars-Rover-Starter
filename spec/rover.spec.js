@@ -53,10 +53,6 @@ describe("Rover class", function () {
     }
 
     expect(response.results[0]).toEqual(status);
-
-    // I know that STATUS_CHECK doesn't require a value
-    // but I dont know why this test is passing 
-    // and if I put something in the toBe it fails
   });
 
   it("responds correctly to the mode change command", function () {
@@ -67,8 +63,7 @@ describe("Rover class", function () {
     let response = rover.receiveMessage(message);
 
     expect(rover.mode).toBe("LOW_POWER");
-
-  });
+});
 
   it("responds with a false completed value when attempting to move in LOW_POWER mode", function () {
 
@@ -97,7 +92,6 @@ it("responds with the position for the move command", function () {
 
 });
 
-// If feel like I should use commandtype and then mode right
-// here to change mode from NORMAL to LOW_POWER 
+
 
 
