@@ -10,9 +10,7 @@ class Rover {
    receiveMessage(message) {
       let roverMessage = message.name;
       let results = [];
-      // let roverStatus = response.results[1].roverStatus;
-      // iterate over the commands array for loop message.commands.length
-      // check the commandtype conditional if/else if/else if/ else(push {completed: true}      
+      
       
       for (let i = 0; i < message.commands.length; i++) {
          if (message.commands[i].commandType === 'STATUS_CHECK') {
@@ -48,27 +46,12 @@ class Rover {
          }
 
       }
-      // if message.commands[i].commandtype is STATUS_CHECK: 
-      // finally .push status objects into the results array
-
-      // if message.commands[i].commandtype is MODE_CHANGE:
-      // update the mode to the value that is being passed in (message.commands[i].value)
-      // .push {completed:true} 
-
-      // if message.commands[i].commandtype is MOVE:
-      // check the mode and if MODE is LOW_POWER push in {completed: false}
-      // else: udpate the position of the rover to the value (message.commands[i].value)
-      // Push to the results array[] results.push {completed: true}
-
+      
       return { message: message.name, results: results }
 
    }
 
 };
-// Write code here!
-// let response return an object containing 2 properties
-// message is the key value is message.name
-// results is a key empty array [] is value 
 
 
 
