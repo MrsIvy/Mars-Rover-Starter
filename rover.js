@@ -18,8 +18,8 @@ class Rover {
                completed: true,
                roverStatus: {
                   mode: this.mode,
-                  generatorWatts: 110,
-                  position: 5860
+                  generatorWatts: this.generatorWatts,
+                  position: this.position
                }
             });
          } else if (message.commands[i].commandType === "MODE_CHANGE") {
